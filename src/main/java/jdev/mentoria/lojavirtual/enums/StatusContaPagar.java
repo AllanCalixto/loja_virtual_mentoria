@@ -1,6 +1,6 @@
 package jdev.mentoria.lojavirtual.enums;
 
-public enum StatusContaReceber {
+public enum StatusContaPagar {
 
     COBRANCA("Pagar"),
     VENCIDA("Vencida"),
@@ -10,12 +10,16 @@ public enum StatusContaReceber {
 
     private String descricao;
 
-   private StatusContaReceber(String descricao) {
+   private StatusContaPagar(String descricao) {
         this.descricao = descricao;
     }
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
