@@ -20,6 +20,10 @@ public class StatusRastreio implements Serializable {
 
     private String status;
 
+    @ManyToOne
+    @JoinColumn(name = "venda_compra_loja_virt_id", nullable = false, foreignKey = @ForeignKey(value = ConstraintMode.CONSTRAINT, name = "venda_compra_loja_virt_fk"))
+    private VendaCompraLojaVirtual vendaCompraLojaVirtual;
+
     public Long getId() {
         return id;
     }
@@ -50,6 +54,14 @@ public class StatusRastreio implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public VendaCompraLojaVirtual getVendaCompraLojaVirtual() {
+        return vendaCompraLojaVirtual;
+    }
+
+    public void setVendaCompraLojaVirtual(VendaCompraLojaVirtual vendaCompraLojaVirtual) {
+        this.vendaCompraLojaVirtual = vendaCompraLojaVirtual;
     }
 
     @Override
